@@ -42,6 +42,22 @@ class BloxorzSuite extends FunSuite {
     val optsolution = List(Right, Right, Down, Right, Right, Right, Down)
   }
 
+  test("terrainfunction works") {
+    new Level1 {
+      assert(
+        this.terrainFunction(Vector(Vector('S', 'T'), Vector('o', 'o'), Vector('o', 'o')))(Pos(0,0))===true
+      )
+
+      assert(
+        this.terrainFunction(Vector(Vector('S', 'T'), Vector('o', 'o'), Vector('o', 'o')))(Pos(3,3))===false
+      )
+
+      assert(
+        this.terrainFunction(Vector(Vector('S', 'T'), Vector('o', 'o'), Vector('-', '-')))(Pos(2,0))===false
+      )
+    }
+
+  }
 
 	test("terrain function level 1") {
     new Level1 {
